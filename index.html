@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <title>Word Guess Game</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link href="stylesheet" type="text/css" media="screen" href="./assets/css/reset.css">
+    <link rel="stylesheet" type="text/css" media="screen" href="./assets/css/reset.css">
     <link rel="stylesheet" type="text/css" media="screen" href="./assets/css/style.css" >
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB" crossorigin="anonymous">
     <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
@@ -13,15 +13,23 @@
 <body>
     
     <div class ="heading">
-        <div class ="h1">Welcome to the Animal guess game
-            <span id="player-name"></span>
+        <div class="row">
+        <div class ="col-12"><h1> Welcome to the Animal guess game
+            <!-- <br/>
+        <span id="playerName"></span>--></h1>
         </div>
         </div>
+    </div>
     <div class="container">
         <div class = "row">
-            <div class="media">
-            <img class="align-self-center mr3" src="../GuessGame/assets/images/zoo-animals.jpg">
+            <div class="col-12">
+            <img class="align-self-center mr3" src="../GuessGame/assets/images/zoo-animals.jpg" alt="animals image">
         </div>
+        </div>
+        <div class = "row2">
+        <div class="col-12">
+                <button id="button" class="btn btn-secondary btn-lg">Start Game</button>
+            </div>
         </div>
         <div class="row">
         <div class="col-12 col-md-6 text-center my-3">
@@ -58,7 +66,7 @@
     </div> <!-- content clossing div-->
     <footer>
             <div class="clearfix"></div>
-            <div class="footer">&copy; 2018 Nancy Louda</div>
+            <div class="footer">&copy;2018 Nancy Louda</div>
     </footer>
     <script src="../GuessGame/assets/javascript/game.js"></script>
 </body>
