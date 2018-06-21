@@ -115,7 +115,7 @@ document.onkeyup= function(event){
     }
     
 }
-
+//first attempt
 //     guessesLeft=9;
 //     guessedLetterbank=[];
 //     incorrectLetterbank=[];
