@@ -1,5 +1,5 @@
 //DOM Elements
-var $playerName=document.getElementById("playerName");
+var $playerName=document.getElementById("playername");
 var $newGameButton=document.getElementById("button");
 var $placeholder=document.getElementById("placeholder");
 var $guessedLetters=document.getElementById("guessed-letters");
@@ -8,8 +8,8 @@ var $wins=document.getElementById("wins");
 var $losses=document.getElementById("losses");
 
 // var playerName= prompt("Hello, What is your name?");
-// if(playerName= true){
-//     $playerName=textContent.playerName;
+// if(playerName=true){
+//     $playerName.textContent=playerName("");
 // }
 
 // variables
@@ -25,7 +25,7 @@ var $losses=document.getElementById("losses");
     var guessesLeft= 9;
     var wins=0;
     var losses=0;
-    var gameRunning=false;
+    var gameRunning= false;
     var word = "";
     var wordPlaceholder="";
     var guessedLetterbank=[];
@@ -62,6 +62,8 @@ function letterGuess(letter){
                 wordPlaceholder[i] = word[i];
             }
         }
+        $placeholder.textContent=wordPlaceholder.join('');
+        checkIncorrect(letter);
     }
 else{
     if(!gameRunning){
@@ -78,9 +80,10 @@ function checkIncorrect(letter){
     wordPlaceholder.indexOf(letter.toUpperCase()) === -1){
         guessesLeft--;
         incorrectLetterbank.push(letter);
-        $word.textContent=incorrectLetterbank.join(' ');
-        $guessesLeft.textContent = guessesLeft;
+        $guessedLetters.textContent=incorrectLetterbank.join(' ');
+        $guessesLeft.textContent = guessesLeft; 
     }
+checkLoss();
 }
 function checkLoss(){
     if(guessesLeft === 0){
@@ -89,20 +92,24 @@ function checkLoss(){
         $losses.textContent = losses;
         $placeholder.textContent=word;
     }
-    checkWin()
+
+    checkWin();
 }
 function checkWin(){
     if(word.toLowerCase()=== wordPlaceholder.join('').toLowerCase()){
-        win++;
+        wins++;
         gameRunning = false;
         $wins.textContent = wins;
     }
+
 }
 
 
-$newGameButton.addEventListener('click',newGame);
-document.onkeyup=function(event){
-    if(event.keycode>=65 && event.keycode<=90)
+$newGameButton.addEventListener('click', newGame);
+
+
+document.onkeyup= function(event){
+    if(event.keyCode>=65 && event.keyCode<=90)
     {
         letterGuess(event.key);
     }
