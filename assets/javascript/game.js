@@ -7,10 +7,9 @@ var $guessesLeft=document.getElementById("guesses-left");
 var $wins=document.getElementById("wins");
 var $losses=document.getElementById("losses");
 
-// var playerName= prompt("Hello, What is your name?");
-// if(playerName=true){
-//     $playerName.textContent=playerName("");
-// }
+var playerName= prompt("Hello, What is your name?");
+    $playerName.textContent=playerName;
+
 
 // variables
 
